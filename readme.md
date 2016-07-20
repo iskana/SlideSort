@@ -16,14 +16,14 @@ This library provides the implementation of the SlideSort and a related clusteri
 
 # Quick start with a sample file
 
-* Enumerating all similar pairs
+Enumerating all similar pairs:
 
     cd SlideSort/SS_v2
     ./slidesort_v2 -d 3 -i test.fasta -mt 4
     or
     cat test.fasta| ./slidesort_v2 -d 3 -I -mt 4
 
-* Finding MSTs  
+Finding MSTs:
 
     cd SlideSort/mst_v2
     ./ssmst_v2 -d 3 -i test.fasta -mt 4
