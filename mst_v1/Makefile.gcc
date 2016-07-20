@@ -1,0 +1,27 @@
+# Makefile
+
+RM = rm
+binfile = ssmst_v1
+objs = tree.o mstree.o
+
+CXX = g++
+AR = ar
+
+CFLAGS =  -O3 -fPIC
+
+.SUFFIXES: .cpp .o
+
+$(binfile): $(objs)
+	$(CXX) -static -o $(binfile) $(objs) libslidesort_v1.a
+
+.cpp.o:
+	$(CXX) $(CFLAGS) -c $<
+
+.PHONY: clean
+clean:
+	$(RM) $(objs) *~ 
+
+# ヘッダーファイルの依存関係
+tree.o: olmst.h
+mstree.o: olmst.h
+

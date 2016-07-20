@@ -1,0 +1,43 @@
+# Makefile
+
+RM = rm
+binfile = ssmst_v2
+objs = tree.o mstree.o blockutil.o pssExecutor.o parallelslidesort.o box.o seq.o comlineoption.o edit_distance.o files.o hamming_distance.o multisort.o calc_edit_distance.o sse_hamming_distance.o chartable.o files2.o files3.o files4.o edit_distance2.o sse_hamming_distance2.o
+
+CXX = g++
+AR = ar
+
+CFLAGS = -O3 -fPIC -Wall -L./ -I./ -fopenmp
+
+.SUFFIXES: .cpp .o
+
+$(binfile): $(objs)
+	$(CXX) -static -o $(binfile) $(objs) -fopenmp
+
+.cpp.o:
+	$(CXX) $(CFLAGS) -c $<
+
+.PHONY: clean
+clean:
+	$(RM) $(objs) *~
+
+tree.o: olmst.h
+mstree.o: olmst.h
+pssExector.o: parallelslidesort.h
+parallelslidesort.o: parallelslidesort.h
+blockutil.o: parallelslidesort.h
+box.o: mscls.h
+seq.o: mscls.h
+comlineoption.o: mscls.h
+edit_distance.o: mscls.h
+edit_distance2.o: mscls.h
+files.o: mscls.h
+files2.o: mscls.h
+files3.o: mscls.h
+files4.o: mscls.h
+hamming_distance.o: mscls.h
+hamming_distance2.o: mscls.h
+multisort.o: mscls.h
+chartable.o: mscls.h
+calc_edit_distance.o: mscls.h
+sse_hamming_distance.o: mscls.h

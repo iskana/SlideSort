@@ -1,0 +1,64 @@
+# Makefile
+
+RM = rm
+binfile = slidesort_v1
+arfile = libslidesort_v1.a
+sarfile= libslidesort_v1.so
+objs = box.o seq.o comlineoption.o edit_distance.o files.o hamming_distance.o mscls.o multisort.o calc_edit_distance.o sse_hamming_distance.o chartable.o files2.o files3.o files4.o edit_distance2.o sse_hamming_distance2.o
+
+#CXX = g++
+#AR = ar
+CXX = icpc
+AR = xiar
+
+#CFLAGS =  -O3 
+CFLAGS = -fast -fPIC -xSSE4.1 
+
+.SUFFIXES: .cpp .o
+
+bin: $(binfile)
+
+lib: $(arfile)
+
+slib: $(sarfile)
+
+
+$(binfile): $(objs)
+	$(CXX) -static -static-intel -o $(binfile) $(objs)
+
+$(arfile): $(objs)
+#	$(AR) -lib crsv $(arfile) $(objs)
+	$(AR) crsv  $(arfile) $(objs) 
+
+$(sarfile): $(objs)
+# for intel
+	$(CXX) -shared -static-intel -static-libstdc++ -static-libgcc  -L. -o  $(sarfile) $(objs)
+#	$(CXX) -shared -static-intel -L. -o  $(sarfile) $(objs)
+
+# for g++
+#	$(CXX) -static -shared -o  $(sarfile) $(objs)
+
+.cpp.o:
+	$(CXX) $(CFLAGS) -c $<
+
+.PHONY: clean
+clean:
+	$(RM) $(objs) *~ 
+
+# ヘッダーファイルの依存関係
+box.o: mscls.h
+seq.o: mscls.h
+comlineoption.o: mscls.h
+edit_distance.o: mscls.h
+edit_distance2.o: mscls.h
+files.o: mscls.h
+files2.o: mscls.h
+files3.o: mscls.h
+files4.o: mscls.h
+hamming_distance.o: mscls.h
+hamming_distance2.o: mscls.h
+mscls.o: mscls.h
+multisort.o: mscls.h
+chartable.o: mscls.h
+calc_edit_distance.o: mscls.h
+sse_hamming_distance.o: mscls.h
