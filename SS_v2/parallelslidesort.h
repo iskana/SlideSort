@@ -1,5 +1,5 @@
+#include "mscls.h"
 #include <omp.h>
-#include  "..\mscls-1.0-fix\\mscls.h"
 
 class BlockCombination
 {

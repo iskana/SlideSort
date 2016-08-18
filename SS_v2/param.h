@@ -1,5 +1,5 @@
 /***********************************************/
-//     Copyright (c) 2010-2012, Kana Shimizu
+//     Copyright (c) 2010-2013, Kana Shimizu
 //         All rights reserved.
 //              param.h
 /***********************************************/

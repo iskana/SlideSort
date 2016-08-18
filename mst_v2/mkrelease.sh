@@ -3,11 +3,11 @@
 rm -rf ssmst_v2-gcc-64
 rm -rf ssmst_v2-intel-64
 rm -rf ssmst_v2-intel-SSE4-64
-rm -rf ssmst_v2-gcc-64.tar.gz
-rm -rf ssmst_v2-intel-64.tar.gz
-rm -rf ssmst_v2-intel-SSE4-64.tar.gz
+rm -f ssmst_v2-gcc-64.tar.gz
+rm -f ssmst_v2-intel-64.tar.gz
+rm -f ssmst_v2-intel-SSE4-64.tar.gz
 
-rm ssmst_v2
+rm -rf ssmst_v2
 
 export PATH=/opt/intel/Compiler/11.1/056/bin/intel64/:$PATH
 export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
@@ -31,7 +31,7 @@ mv tmp.h olmst.h
 
 cp common.h common.h.org
 
-rm ssmst_v2
+rm -rf ssmst_v2
 make -f  Makefile.gcc clean
 ./mdcommon.h.perl common.h.org  INTERNAL_GAP_OPEN VCPP SSE4 SINGLE_CORE > common.h
 make -f  Makefile.gcc 

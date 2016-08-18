@@ -1,5 +1,5 @@
 /***********************************************/
-//     Copyright (c) 2010-2012, Kana Shimizu
+//     Copyright (c) 2010-2013, Kana Shimizu
 //         All rights reserved.
 //             commoh.h
 /***********************************************/
@@ -37,3 +37,5 @@ using namespace std;
 #ifdef VCPP
 #define pow(x,y) (TYPE_LABEL)pow((double)x,(double)y)
 #endif
+
+#define SINGLE_CORE

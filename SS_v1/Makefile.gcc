@@ -1,6 +1,6 @@
 # Makefile
 
-RM = rm
+RM = rm -f 
 binfile = slidesort_v1
 arfile = libslidesort_v1.a
 sarfile= libslidesort_v1.so
@@ -21,15 +21,16 @@ slib: $(sarfile)
 
 
 $(binfile): $(objs)
-	$(CXX) -static -o $(binfile) $(objs)
+#	$(CXX) -static -o $(binfile) $(objs)
+	$(CXX) -o $(binfile) $(objs)
 
 $(arfile): $(objs)
 	$(AR) crsv  $(arfile) $(objs) 
 
 $(sarfile): $(objs)
 # for g++
-	$(CXX) -shared -static-libgcc -static-libstdc++ -o  $(sarfile) $(objs)
-#	$(CXX) -shared  -o  $(sarfile) $(objs)
+#	$(CXX) -shared -static-libgcc -static-libstdc++ -o  $(sarfile) $(objs)
+	$(CXX) -shared  -o  $(sarfile) $(objs)
 
 .cpp.o:
 	$(CXX) $(CFLAGS) -c $<

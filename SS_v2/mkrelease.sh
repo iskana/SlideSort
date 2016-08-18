@@ -3,11 +3,11 @@
 export PATH=/opt/intel/Compiler/11.1/056/bin/intel64/:$PATH
 
 rm -rf ss_v2-gcc-64
-rm -r ss_v2-gcc-64.tar.gz
+rm -f ss_v2-gcc-64.tar.gz
 rm -rf ss_v2-intel-SSE4-64
-rm -r ss_v2-intel-SSE4-64.tar.gz
+rm -f ss_v2-intel-SSE4-64.tar.gz
 rm -rf ss_v2-intel-SSE4-64
-rm -r ss_v2-intel-SSE4-64.tar.gz
+rm -f ss_v2-intel-SSE4-64.tar.gz
 
 cp ../SS_v1/mdcommon.h.perl ./
 cp ../SS_v1/*.cpp ./

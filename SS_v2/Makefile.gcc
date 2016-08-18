@@ -1,6 +1,6 @@
 # Makefile
 
-RM = rm
+RM = rm -f
 binfile = slidesort_v2
 arfile = libslidesort_v2.a
 sarfile= libslidesort_v2.so

@@ -11,7 +11,8 @@ CFLAGS = -O3 -fPIC -Wall -openmp
 .SUFFIXES: .cpp .o
 
 $(binfile): $(objs)
-	$(CXX) $(CFLAGS) -static  -o $(binfile) $(objs)
+	$(CXX) $(CFLAGS) -o $(binfile) $(objs)
+#	$(CXX) $(CFLAGS) -static  -o $(binfile) $(objs)
 
 .cpp.o:
 	$(CXX) $(CFLAGS) -c $<

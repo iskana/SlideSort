@@ -1,6 +1,6 @@
 # Makefile
 
-RM = rm
+RM = rm -f 
 binfile = ssmst_v1
 objs = tree.o mstree.o
 
@@ -12,7 +12,8 @@ CFLAGS =  -O3 -fPIC
 .SUFFIXES: .cpp .o
 
 $(binfile): $(objs)
-	$(CXX) -static -o $(binfile) $(objs) libslidesort_v1.a
+	$(CXX) -o $(binfile) $(objs) libslidesort_v1.a
+#	$(CXX) -static -o $(binfile) $(objs) libslidesort_v1.a
 
 .cpp.o:
 	$(CXX) $(CFLAGS) -c $<

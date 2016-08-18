@@ -1,10 +1,10 @@
 /***********************************************/
-//     Copyright (c) 2010-2012, Kana Shimizu
+//     Copyright (c) 2010-2013, Kana Shimizu
 //         All rights reserved.
 //              mscls.h
 /***********************************************/
 
-#include "..\\mscls-1.0-fix\\common.h"
+#include "common.h"
 #include "param.h"
 
 #ifndef VCPP
@@ -150,7 +150,8 @@ public:
 	TYPE_CHARACTER *nr_seq;   //non redundant sequence
 	TYPE_INDEX *head;
 
-	varInt** toOrgSeqIndex; // 配列数は20億を超えない前提。
+	varInt** toOrgSeqIndex; // 配列数は32bit(の本数)を超えない前提。
+
 	TYPE_INDEX *revCompIdx;
 	int *num_of_unknown_char_matchs;
 	string *seqName;
@@ -435,6 +436,8 @@ public:
 		bucketID=NULL;
 
 		resetordertmplt=NULL;
+
+		grfptr=NULL;
 	}
 	~multisort(){
 		if(free_vals_automatic==false)
@@ -498,11 +501,4 @@ public:
 		}
 	}
 };
-
-
-#ifndef __PARALLELSLIDESORT_H__INCLUDE__
-#define __PARALLELSLIDESORT_H__INCLUDE__
-#include "parallelslidesort.h"
-#endif
-
 

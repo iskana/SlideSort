@@ -1,6 +1,6 @@
 # Makefiles
 
-RM = rm
+RM = rm -f 
 binfile = slidesort_v2
 arfile = libslidesort_v2.a
 sarfile= libslidesort_v2.so
@@ -24,14 +24,16 @@ slib: $(sarfile)
 
 
 $(binfile): $(objs)
-	$(CXX) -static -o $(binfile) $(objs) -openmp
+	$(CXX) -o $(binfile) $(objs) -openmp
+#	$(CXX) -static -o $(binfile) $(objs) -openmp
 
 $(arfile): $(objs)
 	$(AR) crsv  $(arfile) $(objs)
 
 $(sarfile): $(objs)
 # for intel
-	$(CXX) -shared -static-intel -static-libstdc++ -static-libgcc  -L. -o  $(sarfile) $(objs)
+	$(CXX) -shared -L. -o  $(sarfile) $(objs)
+#	$(CXX) -shared -static-intel -static-libstdc++ -static-libgcc  -L. -o  $(sarfile) $(objs)
 #       $(CXX) -shared -static-intel -L. -o  $(sarfile) $(objs)
 
 # for g++
@@ -63,5 +65,3 @@ multisort.o: mscls.h
 chartable.o: mscls.h
 calc_edit_distance.o: mscls.h
 sse_hamming_distance.o: mscls.h
-
-

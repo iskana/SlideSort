@@ -7,7 +7,7 @@ rm -rf ssmst_v1-gcc-64.tar.gz
 rm -rf ssmst_v1-intel-64.tar.gz
 rm -rf ssmst_v1-intel-SSE4-64.tar.gz
 
-rm ssmst_v1
+rm -rf ssmst_v1
 
 export PATH=/opt/intel/Compiler/11.1/056/bin/intel64/:$PATH
 export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH

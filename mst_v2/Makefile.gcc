@@ -1,6 +1,6 @@
 # Makefile
 
-RM = rm
+RM = rm -f
 binfile = ssmst_v2
 objs = tree.o mstree.o blockutil.o pssExecutor.o parallelslidesort.o box.o seq.o comlineoption.o edit_distance.o files.o hamming_distance.o multisort.o calc_edit_distance.o sse_hamming_distance.o chartable.o files2.o files3.o files4.o edit_distance2.o sse_hamming_distance2.o
 
@@ -12,7 +12,8 @@ CFLAGS = -O3 -fPIC -Wall -L./ -I./ -fopenmp
 .SUFFIXES: .cpp .o
 
 $(binfile): $(objs)
-	$(CXX) -static -o $(binfile) $(objs) -fopenmp
+	$(CXX) -o $(binfile) $(objs) -fopenmp
+#	$(CXX) -static -o $(binfile) $(objs) -fopenmp
 
 .cpp.o:
 	$(CXX) $(CFLAGS) -c $<
