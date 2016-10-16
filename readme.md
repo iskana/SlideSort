@@ -32,7 +32,7 @@ Finding MSTs:
 
 # Copyright Notice
 
-Copyright (C) 2015, Kana Shimizu
+Copyright (C) 2016, Kana Shimizu
 All rights reserved.
 
 # License
