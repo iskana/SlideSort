@@ -217,7 +217,7 @@ Contact: shimizu-kana@aist.go.jp \n";
 
 	if(isPairOut || isAlnOut){
 		pFile.open(pairFname);
-		if(pFile==NULL){
+		if(!pFile){
 			cerr<<"ERROR: output file for alignment is not found\nPlease use -F filename\n";
 			exit(1);
 		}
@@ -225,7 +225,7 @@ Contact: shimizu-kana@aist.go.jp \n";
 
 	if(isDegreeOut){
 		dFile.open(degreeFname);
-		if(dFile==NULL){
+		if(!dFile){
 			cerr<<"ERROR: output file for degree is not found\nPlease use -R filename\n";
 			exit(1);
 		}
