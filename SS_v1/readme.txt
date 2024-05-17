@@ -1,6 +1,6 @@
 /**************************************************/
                    SLIDESORT
-    Copyright (c) 2010-2012,   Kana Shimizu
+    Copyright (c) 2010-2024,   Kana Shimizu
               All rights reserved.
 /**************************************************/
 
@@ -93,7 +93,5 @@ Kana Shimizu and Koji Tsuda "SlideSort:All pairs similarity search for short rea
 
 7. Lisence
 
-SLIDESORT is freely available both for academic and commercial user.
-Lisencing is necessary if SLIDESORT is redistributed for commercial purpose.
+SLIDESORT is freely available both for academic and commercial users.
 Redistributions in binary form must reproduce the above copyright notice.
-
